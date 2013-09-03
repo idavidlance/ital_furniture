@@ -105,7 +105,10 @@ class RbacCommand extends CConsoleCommand
 			 $role->addChild("deleteUser");  
 			 $role->addChild("createShop"); 
 			 $role->addChild("updateShop"); 
-			 $role->addChild("deleteShop");	
+			 $role->addChild("deleteShop");
+			 $role->addChild("createFurniture"); 
+			 $role->addChild("updateFurniture"); 
+			 $role->addChild("deleteFurniture");	
 		
 		     //provide a message indicating success
 		     echo "Authorization hierarchy successfully generated.\n";
