@@ -44,11 +44,11 @@ class Note extends WraperActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('furniture_id, user_id, update_user_id', 'numerical', 'integerOnly'=>true),
+			array('furniture_id, create_user_id, update_user_id', 'numerical', 'integerOnly'=>true),
 			array('create_time, update_time', 'safe'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, furniture_id, user_id, create_time, update_time, update_user_id', 'safe', 'on'=>'search'),
+			array('id, furniture_id, create_user_id, create_time, update_time, update_user_id', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -62,7 +62,7 @@ class Note extends WraperActiveRecord
 		return array(
 			'furniture' => array(self::BELONGS_TO, 'Furniture', 'furniture_id'),
 			'updateUser' => array(self::BELONGS_TO, 'User', 'update_user_id'),
-			'user' => array(self::BELONGS_TO, 'User', 'user_id'),
+			'user' => array(self::BELONGS_TO, 'User', 'create_user_id'),
 		);
 	}
 
@@ -74,7 +74,7 @@ class Note extends WraperActiveRecord
 		return array(
 			'id' => 'ID',
 			'furniture_id' => 'Furniture',
-			'user_id' => 'User',
+			'create_user_id' => 'User',
 			'create_time' => 'Create Time',
 			'update_time' => 'Update Time',
 			'update_user_id' => 'Update User',
@@ -94,7 +94,7 @@ class Note extends WraperActiveRecord
 
 		$criteria->compare('id',$this->id);
 		$criteria->compare('furniture_id',$this->furniture_id);
-		$criteria->compare('user_id',$this->user_id);
+		$criteria->compare('create_user_id',$this->create_user_id);
 		$criteria->compare('create_time',$this->create_time,true);
 		$criteria->compare('update_time',$this->update_time,true);
 		$criteria->compare('update_user_id',$this->update_user_id);

@@ -22,9 +22,9 @@
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'user_id'); ?>
-		<?php echo $form->textField($model,'user_id'); ?>
-		<?php echo $form->error($model,'user_id'); ?>
+		<?php echo $form->labelEx($model,'create_user_id'); ?>
+		<?php echo $form->textField($model,'create_user_id'); ?>
+		<?php echo $form->error($model,'create_user_id'); ?>
 	</div>
 
 	<div class="row">
