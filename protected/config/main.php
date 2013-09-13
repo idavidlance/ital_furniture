@@ -45,7 +45,7 @@ return array(
 				'<controller:\w+>/<action:\w+>/<id:\d+>'=>'<controller>/<action>',
 				'<controller:\w+>/<action:\w+>'=>'<controller>/<action>',
 			),
-			//'showScriptName' => false,
+			'showScriptName' => false,
 		),
 		
 	/*
@@ -96,5 +96,7 @@ return array(
 		// this is used in contact page
 		'adminEmail'=>'webmaster@example.com',
 	),
-	'homeUrl'=>'/ital_furniture/shop',
+	'homeUrl'=>'/ital_furniture/shop/index',
+	//'theme'=>'custom',
+	//'language'=>'rev',
 );
