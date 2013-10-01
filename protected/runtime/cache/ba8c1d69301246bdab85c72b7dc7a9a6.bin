@@ -1,0 +1,13 @@
+a:2:{i:0;a:2:{i:0;s:350:"<div class="portlet" id="yw2">
+<div class="portlet-decoration">
+<div class="portlet-title">Recent Advert</div>
+</div>
+<div class="portlet-content">
+<div id="yw3" class="list-view">
+
+
+<div class="items">
+<span class="empty">No results found.</span></div>
+<div class="keys" style="display:none" title="/ital_furniture/shop/2"></div>
+</div></div>
+</div>";i:1;a:6:{i:0;a:3:{i:0;s:12:"clientScript";i:1;s:15:"registerCssFile";i:2;a:1:{i:0;s:51:"/ital_furniture/assets/6d5a66bc/listview/styles.css";}}i:1;a:3:{i:0;s:12:"clientScript";i:1;s:18:"registerCoreScript";i:2;a:1:{i:0;s:6:"jquery";}}i:2;a:3:{i:0;s:12:"clientScript";i:1;s:18:"registerCoreScript";i:2;a:1:{i:0;s:3:"bbq";}}i:3;a:3:{i:0;s:12:"clientScript";i:1;s:18:"registerScriptFile";i:2;a:2:{i:0;s:62:"/ital_furniture/assets/6d5a66bc/listview/jquery.yiilistview.js";i:1;i:2;}}i:4;a:3:{i:0;s:12:"clientScript";i:1;s:14:"registerScript";i:2;a:2:{i:0;s:13:"CListView#yw3";i:1;s:169:"jQuery('#yw3').yiiListView({'ajaxUpdate':['yw3'],'ajaxVar':'ajax','pagerClass':'pager','loadingClass':'list-view-loading','sorterClass':'sorter','enableHistory':false});";}}i:5;a:3:{i:0;s:12:"clientScript";i:1;s:15:"registerCssFile";i:2;a:1:{i:0;s:41:"/ital_furniture/assets/9608f2b6/pager.css";}}}}i:1;N;}

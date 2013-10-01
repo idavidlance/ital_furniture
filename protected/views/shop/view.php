@@ -47,7 +47,15 @@ if(Yii::app()->user->checkAccess('createUser',array('shop'=>$model)))
 
 <br />
 <h1>Furniture</h1>
-<?php $this->widget('zii.widgets.CListView', array(
+<?php
+$key = "ItalFurniture.ShopListing.RecentAdvert";
+if($this->beginCache($key, array('duration'=>120))) {
+   $this->beginWidget('zii.widgets.CPortlet', array(
+    'title'=>'Recent Advert',));
+  $this->widget('zii.widgets.CListView', array(
   'dataProvider'=>$furnitDataProvider,
-  'itemView'=>'/furniture/_view',
-)); ?>
+  'itemView'=>'/furniture/_view',));
+  $this->endWidget();
+  $this->endCache();
+}
+?>

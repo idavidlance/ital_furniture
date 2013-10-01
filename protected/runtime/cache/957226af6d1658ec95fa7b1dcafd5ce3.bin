@@ -1,0 +1,116 @@
+a:2:{i:0;a:2:{i:0;s:4957:"<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="language" content="en" />
+
+	<!-- blueprint CSS framework -->
+	<link rel="stylesheet" type="text/css" href="/ital_furniture/css/screen.css" media="screen, projection" />
+	<link rel="stylesheet" type="text/css" href="/ital_furniture/css/print.css" media="print" />
+	<!--[if lt IE 8]>
+	<link rel="stylesheet" type="text/css" href="/ital_furniture/css/ie.css" media="screen, projection" />
+	<![endif]-->
+
+	<link rel="stylesheet" type="text/css" href="/ital_furniture/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/ital_furniture/css/form.css" />
+
+	<link rel="stylesheet" type="text/css" href="/ital_furniture/assets/6d5a66bc/detailview/styles.css" />
+<link rel="stylesheet" type="text/css" href="/ital_furniture/assets/6d5a66bc/listview/styles.css" />
+<link rel="stylesheet" type="text/css" href="/ital_furniture/assets/9608f2b6/pager.css" />
+<script type="text/javascript" src="/ital_furniture/assets/979fefde/jquery.js"></script>
+<script type="text/javascript" src="/ital_furniture/assets/979fefde/jquery.ba-bbq.js"></script>
+<script type="text/javascript" src="/ital_furniture/assets/979fefde/jquery.yii.js"></script>
+<title>Italian Furniture - View Shop</title>
+</head>
+
+<body>
+
+<div class="container" id="page">
+
+	<div id="header">
+		<div id="logo">Italian Furniture</div>
+	</div><!-- header -->
+
+	<div id="mainmenu">
+		<ul id="yw7">
+<li><a href="/ital_furniture/site/index">Home</a></li>
+<li><a href="/ital_furniture/site/page?view=about">About</a></li>
+<li><a href="/ital_furniture/site/contact">Contact</a></li>
+<li><a href="/ital_furniture/admin/default/index">Admin</a></li>
+<li><a href="/ital_furniture/site/logout">Logout (admin)</a></li>
+<li><a href="/ital_furniture/shop">Shop</a></li>
+<li><a href="/ital_furniture/furniture/index">Furniture</a></li>
+<li><a href="/ital_furniture/user/index">Users</a></li>
+</ul>	</div><!-- mainmenu -->
+			<div class="breadcrumbs">
+<a href="/ital_furniture/shop/index">Home</a> &raquo; <a href="/ital_furniture/shop/index">Shops</a> &raquo; <span>Новый магаз</span></div><!-- breadcrumbs -->
+	
+	<div class="span-19">
+	<div id="content">
+		
+<h1>View Shop #2</h1>
+
+<table class="detail-view" id="yw1"><tr class="odd"><th>ID</th><td>2</td></tr>
+<tr class="even"><th>Name</th><td>Новый магаз</td></tr>
+<tr class="odd"><th>Description</th><td>Новый магазНовый магазНовый магазНовый магазНовый магазНовый магаз</td></tr>
+<tr class="even"><th>Create Time</th><td>2013-09-12 09:01:46</td></tr>
+<tr class="odd"><th>Create User</th><td>1</td></tr>
+<tr class="even"><th>Update Time</th><td>2013-09-12 09:01:46</td></tr>
+<tr class="odd"><th>Update User</th><td>1</td></tr>
+</table>
+<br />
+<h1>Furniture</h1>
+<div class="portlet" id="yw2">
+<div class="portlet-decoration">
+<div class="portlet-title">Recent Advert</div>
+</div>
+<div class="portlet-content">
+<div id="yw3" class="list-view">
+
+
+<div class="items">
+<span class="empty">No results found.</span></div>
+<div class="keys" style="display:none" title="/ital_furniture/shop/2"></div>
+</div></div>
+</div>	</div><!-- content -->
+</div>
+<div class="span-5 last">
+	<div id="sidebar">
+	<div class="portlet" id="yw5">
+<div class="portlet-decoration">
+<div class="portlet-title">Operations</div>
+</div>
+<div class="portlet-content">
+<ul class="operations" id="yw6">
+<li><a href="/ital_furniture/shop/index">List Shop</a></li>
+<li><a href="/ital_furniture/shop/create">Create Shop</a></li>
+<li><a href="/ital_furniture/shop/update/2">Update Shop</a></li>
+<li><a href="#" id="yt0">Delete Shop</a></li>
+<li><a href="/ital_furniture/shop/admin">Manage Shop</a></li>
+<li><a href="/ital_furniture/furniture/create?sid=2">Create Furniture</a></li>
+<li><a href="/ital_furniture/shop/adduser/2">Add User To Shop</a></li>
+</ul></div>
+</div>	</div><!-- sidebar -->
+</div>
+
+	<div class="clear"></div>
+
+	<div id="footer">
+		Copyright &copy; 2013 by My Company.<br/>
+		All Rights Reserved.<br/>
+		Powered by <a href="http://www.yiiframework.com/" rel="external">Yii Framework</a>.	</div><!-- footer -->
+
+</div><!-- page -->
+
+<script type="text/javascript" src="/ital_furniture/assets/6d5a66bc/listview/jquery.yiilistview.js"></script>
+<script type="text/javascript">
+/*<![CDATA[*/
+jQuery(function($) {
+jQuery('#yw3').yiiListView({'ajaxUpdate':['yw3'],'ajaxVar':'ajax','pagerClass':'pager','loadingClass':'list-view-loading','sorterClass':'sorter','enableHistory':false});
+jQuery('body').on('click','#yt0',function(){if(confirm('Are you sure you want to delete this item?')) {jQuery.yii.submitForm(this,'/ital_furniture/shop/delete/2',{});return false;} else return false;});
+});
+/*]]>*/
+</script>
+</body>
+</html>
+";i:1;a:9:{i:0;a:3:{i:0;s:12:"clientScript";i:1;s:15:"registerCssFile";i:2;a:1:{i:0;s:53:"/ital_furniture/assets/6d5a66bc/detailview/styles.css";}}i:1;a:3:{i:0;s:12:"clientScript";i:1;s:15:"registerCssFile";i:2;a:1:{i:0;s:51:"/ital_furniture/assets/6d5a66bc/listview/styles.css";}}i:2;a:3:{i:0;s:12:"clientScript";i:1;s:18:"registerCoreScript";i:2;a:1:{i:0;s:6:"jquery";}}i:3;a:3:{i:0;s:12:"clientScript";i:1;s:18:"registerCoreScript";i:2;a:1:{i:0;s:3:"bbq";}}i:4;a:3:{i:0;s:12:"clientScript";i:1;s:18:"registerScriptFile";i:2;a:2:{i:0;s:62:"/ital_furniture/assets/6d5a66bc/listview/jquery.yiilistview.js";i:1;i:2;}}i:5;a:3:{i:0;s:12:"clientScript";i:1;s:14:"registerScript";i:2;a:2:{i:0;s:13:"CListView#yw3";i:1;s:169:"jQuery('#yw3').yiiListView({'ajaxUpdate':['yw3'],'ajaxVar':'ajax','pagerClass':'pager','loadingClass':'list-view-loading','sorterClass':'sorter','enableHistory':false});";}}i:6;a:3:{i:0;s:12:"clientScript";i:1;s:15:"registerCssFile";i:2;a:1:{i:0;s:41:"/ital_furniture/assets/9608f2b6/pager.css";}}i:7;a:3:{i:0;s:12:"clientScript";i:1;s:18:"registerCoreScript";i:2;a:1:{i:0;s:3:"yii";}}i:8;a:3:{i:0;s:12:"clientScript";i:1;s:14:"registerScript";i:2;a:2:{i:0;s:14:"Yii.CHtml.#yt0";i:1;s:202:"jQuery('body').on('click','#yt0',function(){if(confirm('Are you sure you want to delete this item?')) {jQuery.yii.submitForm(this,'/ital_furniture/shop/delete/2',{});return false;} else return false;});";}}}}i:1;N;}

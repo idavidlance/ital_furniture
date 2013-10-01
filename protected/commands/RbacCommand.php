@@ -95,6 +95,9 @@ class RbacCommand extends CConsoleCommand
 			 $role->addChild("updateFurniture"); 
 			 $role->addChild("deleteFurniture"); 
  
+
+ 			 //create a general task-level permission for admins
+			 $this->_authManager->createTask("adminManagement", "access to the application administration functionality");
 			 //create the owner role, and add the appropriate permissions, 
 			 //as well as both the reader and member roles as children
 			 $role=$this->_authManager->createRole("admin"); 
@@ -108,7 +111,10 @@ class RbacCommand extends CConsoleCommand
 			 $role->addChild("deleteShop");
 			 $role->addChild("createFurniture"); 
 			 $role->addChild("updateFurniture"); 
-			 $role->addChild("deleteFurniture");	
+			 $role->addChild("deleteFurniture");
+			 $role->addChild("adminManagement");
+			 //ensure we have one admin in the system (force it to be user id #1)
+			 $this->_authManager->assign("admin",5);	
 		
 		     //provide a message indicating success
 		     echo "Authorization hierarchy successfully generated.\n";

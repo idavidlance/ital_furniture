@@ -113,4 +113,10 @@ class SiteController extends Controller
 		Yii::app()->user->logout();
 		$this->redirect(Yii::app()->homeUrl);
 	}
+
+	public function actionShowLog()
+	{
+		echo "Logged Messages:<br><br>";
+		CVarDumper::dump(Yii::getLogger()->getLogs());
+	}
 }

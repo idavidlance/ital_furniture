@@ -1,12 +1,12 @@
 <?php
 
-class ShopController extends Controller
+class SysMessageController extends Controller
 {
 	/**
 	 * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
 	 * using two-column layout. See 'protected/views/layouts/column2.php'.
 	 */
-	public $layout='//layouts/column2';
+	public $layout='/layouts/column2';
 
 	/**
 	 * @return array action filters
@@ -16,41 +16,25 @@ class ShopController extends Controller
 		return array(
 			'accessControl', // perform access control for CRUD operations
 			'postOnly + delete', // we only allow deletion via POST request
-			array(
-            	'COutputCache + view',  //cache the entire output from the actionView() method for 2 minutes
-            	'duration'=>120,
-            	'varyByParam'=>array('id'),
-        	),
 		);
 	}
 
-	public function actionAdduser($id)
+	/**
+	 * Specifies the access control rules.
+	 * This method is used by the 'accessControl' filter.
+	 * @return array access control rules
+	 */
+	public function accessRules()
 	{
-		$shop = $this->loadModel($id);
-		if(!Yii::app()->user->checkAccess('createUser', array('shop'=>$shop)))
-		{
-			throw new CHttpException(403,'You are not authorized to perform this action.');
-		}
-		$form = new ShopUserForm; 
-		// collect user input data
-		/*if(isset($_POST['ShopUserForm']))
-		{
-	    	$form->attributes=$_POST['ShopUserForm'];
-	    	$form->shop = $shop;
-	    	// validate user input  
-	    	if($form->validate())  
-	    	{
-		        if($form->assign())
-		    	{
-		    		Yii::app()->user->setFlash('success',$form->username . " has been added to the shop." ); 
-		       		//reset the form for another user to be associated if desired
-		      		$form->unsetAttributes();
-		      		$form->clearErrors();
-		      	}
-	    	}
-	  	}
-		$form->shop = $shop;
-		$this->render('adduser',array('model'=>$form)); */
+		return array(
+			array('allow',  // allow all users to perform 'index' and 'view' actions
+				'actions'=>array('index','view', 'create', 'update', 'admin', 'delete'),
+				'roles'=>array('admin'),
+			),
+			array('deny',  // deny all users
+				'users'=>array('*'),
+			),
+		);
 	}
 
 	/**
@@ -59,16 +43,8 @@ class ShopController extends Controller
 	 */
 	public function actionView($id)
 	{
-		$furnitDataProvider=new CActiveDataProvider('Furniture', array(
-			'criteria'=>array(
-				'condition'=>'shop_id=:shopId',
-				'params'=>array(':shopId'=>$this->loadModel($id)->id),),
-			'pagination'=>array('pageSize'=>5,),
-			));
-
 		$this->render('view',array(
 			'model'=>$this->loadModel($id),
-			'furnitDataProvider' => $furnitDataProvider,
 		));
 	}
 
@@ -78,14 +54,14 @@ class ShopController extends Controller
 	 */
 	public function actionCreate()
 	{
-		$model=new Shop;
+		$model=new SysMessage;
 
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
-		if(isset($_POST['Shop']))
+		if(isset($_POST['SysMessage']))
 		{
-			$model->attributes=$_POST['Shop'];
+			$model->attributes=$_POST['SysMessage'];
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->id));
 		}
@@ -107,9 +83,9 @@ class ShopController extends Controller
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
-		if(isset($_POST['Shop']))
+		if(isset($_POST['SysMessage']))
 		{
-			$model->attributes=$_POST['Shop'];
+			$model->attributes=$_POST['SysMessage'];
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->id));
 		}
@@ -138,18 +114,9 @@ class ShopController extends Controller
 	 */
 	public function actionIndex()
 	{
-		$dataProvider=new CActiveDataProvider('Shop');
-
-		//$sysMessage = SysMessage::model()->find(array('order'=>'t.update_time DESC',));
-		$sysMessage = SysMessage::getLatest();
-      	if($sysMessage !== null)
-        	$message = $sysMessage->message;
-      	else
-        	$message = null;
-
-        $this->render('index',array(
+		$dataProvider=new CActiveDataProvider('SysMessage');
+		$this->render('index',array(
 			'dataProvider'=>$dataProvider,
-			'sysMessage'=>$message,
 		));
 	}
 
@@ -158,10 +125,10 @@ class ShopController extends Controller
 	 */
 	public function actionAdmin()
 	{
-		$model=new Shop('search');
+		$model=new SysMessage('search');
 		$model->unsetAttributes();  // clear any default values
-		if(isset($_GET['Shop']))
-			$model->attributes=$_GET['Shop'];
+		if(isset($_GET['SysMessage']))
+			$model->attributes=$_GET['SysMessage'];
 
 		$this->render('admin',array(
 			'model'=>$model,
@@ -172,12 +139,12 @@ class ShopController extends Controller
 	 * Returns the data model based on the primary key given in the GET variable.
 	 * If the data model is not found, an HTTP exception will be raised.
 	 * @param integer $id the ID of the model to be loaded
-	 * @return Shop the loaded model
+	 * @return SysMessage the loaded model
 	 * @throws CHttpException
 	 */
 	public function loadModel($id)
 	{
-		$model=Shop::model()->findByPk($id);
+		$model=SysMessage::model()->findByPk($id);
 		if($model===null)
 			throw new CHttpException(404,'The requested page does not exist.');
 		return $model;
@@ -185,11 +152,11 @@ class ShopController extends Controller
 
 	/**
 	 * Performs the AJAX validation.
-	 * @param Shop $model the model to be validated
+	 * @param SysMessage $model the model to be validated
 	 */
 	protected function performAjaxValidation($model)
 	{
-		if(isset($_POST['ajax']) && $_POST['ajax']==='shop-form')
+		if(isset($_POST['ajax']) && $_POST['ajax']==='sys-message-form')
 		{
 			echo CActiveForm::validate($model);
 			Yii::app()->end();
